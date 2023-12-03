@@ -1,5 +1,7 @@
 <script setup>
-import IndexCpns from './components/IndexCpns/IndexCpns.vue';
+import IndexCpns from './IndexCpns/IndexCpns.vue';
+import SubIndexCpns from './SubIndexCpns/SubIndexCpns.vue'
+
 </script>
 
 <template>
@@ -7,7 +9,9 @@ import IndexCpns from './components/IndexCpns/IndexCpns.vue';
         <div class="index">
             <IndexCpns />
         </div>
-        <div class="sub-index"></div>
+        <div class="sub-index">
+            <SubIndexCpns />
+        </div>
         <div class="content">
         </div>
     </div>

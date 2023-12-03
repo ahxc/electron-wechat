@@ -1,5 +1,8 @@
 <script setup>
 import { ref } from 'vue';
+import store from 'store/index.js';
+
+const mainStore = store();
 
 const barItem = [
     {
@@ -19,11 +22,8 @@ const barItem = [
     }];
 
 
-// 当前激活
-const presentItem = ref('session');
-
 function itemClick(key = 'session') {
-    presentItem.value = key;
+    mainStore.presentItem = key;
 }
 </script>
 
@@ -42,9 +42,11 @@ function itemClick(key = 'session') {
           key="item"
           @click="itemClick(item.key)"
         >
-            <img :src="item.key === presentItem ? item.fill : item.out">
+            <img :src="item.key === mainStore.presentItem ? item.fill : item.out">
         </div>
     </div>
 </template>
  
-<style lang="less" scoped>@import './index.less';</style>
+<style lang="less" scoped>
+@import './index.less';
+</style>

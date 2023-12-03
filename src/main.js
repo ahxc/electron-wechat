@@ -51,8 +51,8 @@ const createWinMain = () => {
   const winMain = new BrowserWindow({
     width: 900,
     height: 600,
-    minWidth: 600,
-    minHeight: 400,
+    minWidth: 750,
+    minHeight: 500,
     frame: false,
     titleBarStyle: 'hidden',
     titleBarOverlay: {
