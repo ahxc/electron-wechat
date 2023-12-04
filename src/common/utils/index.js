@@ -1,5 +1,6 @@
 import axios from "axios";
-
+import moment from 'moment'
+import { computed } from 'vue'
 
 const instance = axios.create({
     baseURL: "http://123.207.32.32:8000"
@@ -35,7 +36,7 @@ export const request = function (url, params = {}) {
     });
 };
 
-
+// 防抖
 export function debounce(fn, delay = 400) {
     let timer = null;
     return function () {
@@ -46,6 +47,17 @@ export function debounce(fn, delay = 400) {
     };
 }
 
+// 节流
 export function throttle(fn, delay = 400) {
 
+}
+
+// 如果是当天的时间返回24小时制时分。否则返回日期格式YYYY/MM/DD
+export function timeHandle(time) {
+    const today = moment()
+    const _time = moment(time)
+    if (today.isSame(_time, 'day')) {
+        return _time.format('HH:mm')
+    }
+    return _time.format('YY/MM/DD')
 }

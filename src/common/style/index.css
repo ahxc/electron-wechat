@@ -24,3 +24,9 @@ body {
   background-color: lightgray;
   opacity: 0.5;
 }
+
+
+/* 列表组件list标题 */
+.ant-list .ant-list-item .ant-list-item-meta .ant-list-item-meta-title {
+  margin: 0;
+}

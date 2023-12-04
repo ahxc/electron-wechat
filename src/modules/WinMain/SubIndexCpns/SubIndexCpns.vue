@@ -1,6 +1,5 @@
 <script setup>
-import SearchBar from './SearchBar/SearchBar.vue';
-import ContentBar from './ContentBar/ContentBar.vue';
+import SessionItems from './SessionItems/SessionItems.vue';
 import { onMounted } from 'vue';
 import moment from 'moment';
 import store from 'store';
@@ -14,18 +13,7 @@ const mainStore = store();
 
 <template>
     <div class="container-a">
-        <div class="search-bar">
-            <SearchBar />
-        </div>
-        <div class="scroll-bar">
-            <div class="scroll-content">
-                <ContentBar
-                  v-for="(item, index) in mainStore.sessionItems"
-                  :key="item.id"
-                  :data="item"
-                />
-            </div>
-        </div>
+        <SessionItems v-if="mainStore.presentItem === 'session'"></SessionItems>
     </div>
 </template>
  
