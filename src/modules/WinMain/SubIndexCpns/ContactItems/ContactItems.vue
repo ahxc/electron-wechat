@@ -22,8 +22,9 @@ function onChange(params) {
 
 }
 
+
 function activatedItem(id) {
-    mainStore.sessionSelected = id
+    mainStore.contactSelected = id
 }
 
 </script>
@@ -53,32 +54,22 @@ function activatedItem(id) {
         >
             <template #renderItem="{ item }">
                 <ListItem
-                    :class="{ activated: item.id === mainStore.sessionSelected }"
+                    :class="{ activated: item.id === mainStore.contactSelected }"
                     @click="activatedItem(item.id)"
                 >
                     <ListItemMeta>
                         <template #avatar>
-                            <Badge dot>
-                                <Avatar
-                                    class="avatar"
-                                    shape="square"
-                                    src="/image/portrait.jpg"
-                                />
-                            </Badge>
+                            <Avatar
+                                class="avatar"
+                                shape="square"
+                                src="/image/portrait.jpg"
+                            />
                         </template>
                         <template #title>
                             <div class="title">
                                 <div class="text">
                                     {{ item.name }}
                                 </div>
-                                <div class="time">
-                                    {{ timeHandle(item.time) }}
-                                </div>
-                            </div>
-                        </template>
-                        <template #description>
-                            <div class="description">
-                                {{ item.message }}
                             </div>
                         </template>
                     </ListItemMeta>

@@ -1,1 +1,1 @@
-仿微信客户端。采用electron forge+vue3+pinia+js+vite+less构建。
+仿微信客户端。采用electronForge+vue3+pinia+antDesign+js+vite+less构建。

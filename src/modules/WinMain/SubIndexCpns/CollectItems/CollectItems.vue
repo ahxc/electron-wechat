@@ -10,7 +10,9 @@ import {
     Badge,
     Avatar,
 } from 'ant-design-vue';
-import { SearchOutlined } from '@ant-design/icons-vue'
+import {
+    SearchOutlined
+} from '@ant-design/icons-vue'
 import { timeHandle } from 'common/utils'
 
 onMounted(() => {
@@ -22,9 +24,10 @@ function onChange(params) {
 
 }
 
-function activatedItem(id) {
-    mainStore.sessionSelected = id
+function activatedItem(item) {
+    mainStore.collectSelected = item
 }
+
 
 </script>
 
@@ -48,37 +51,23 @@ function activatedItem(id) {
             itemLayout="horizontal"
             :bordered="false"
             :split="false"
-            :dataSource="mainStore.sessionItems"
+            :dataSource="mainStore.collectItems"
             size="small"
         >
             <template #renderItem="{ item }">
                 <ListItem
-                    :class="{ activated: item.id === mainStore.sessionSelected }"
-                    @click="activatedItem(item.id)"
+                    :class="{ activated: item.type === mainStore.collectSelected.type }"
+                    @click="activatedItem(item)"
                 >
                     <ListItemMeta>
                         <template #avatar>
-                            <Badge dot>
-                                <Avatar
-                                    class="avatar"
-                                    shape="square"
-                                    src="/image/portrait.jpg"
-                                />
-                            </Badge>
+                            <component :is="item.icon" />
                         </template>
                         <template #title>
                             <div class="title">
                                 <div class="text">
-                                    {{ item.name }}
+                                    {{ item.text }}
                                 </div>
-                                <div class="time">
-                                    {{ timeHandle(item.time) }}
-                                </div>
-                            </div>
-                        </template>
-                        <template #description>
-                            <div class="description">
-                                {{ item.message }}
                             </div>
                         </template>
                     </ListItemMeta>

@@ -1,6 +1,7 @@
-<script setup>
+<script lang="js" setup>
 import IndexCpns from './IndexCpns/IndexCpns.vue';
 import SubIndexCpns from './SubIndexCpns/SubIndexCpns.vue'
+import ContentCpns from './ContentCpns/ContentCpns.vue'
 
 </script>
 
@@ -13,6 +14,7 @@ import SubIndexCpns from './SubIndexCpns/SubIndexCpns.vue'
             <SubIndexCpns />
         </div>
         <div class="content">
+            <ContentCpns />
         </div>
     </div>
 </template>

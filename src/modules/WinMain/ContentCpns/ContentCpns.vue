@@ -1,8 +1,11 @@
-<script setup>
+<script lang="js" setup>
+import CollectionContent from './CollectionContent/CollectionContent.vue'
 
 </script>
 
-<template></template>
+<template>
+    <CollectionContent />
+</template>
  
 <style lang="less" scoped>
 @import './index.less';

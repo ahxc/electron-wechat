@@ -1,4 +1,4 @@
-<script setup>
+<script lang="js" setup>
 import WinLogin from './modules/WinLogin/WinLogin.vue';
 import WinMain from './modules/WinMain/WinMain.vue';
 

@@ -1,5 +1,7 @@
-<script setup>
+<script lang="js" setup>
 import SessionItems from './SessionItems/SessionItems.vue';
+import ContactItems from './ContactItems/ContactItems.vue';
+import CollectItems from './CollectItems/CollectItems.vue';
 import { onMounted } from 'vue';
 import moment from 'moment';
 import store from 'store';
@@ -14,6 +16,8 @@ const mainStore = store();
 <template>
     <div class="container-a">
         <SessionItems v-if="mainStore.presentItem === 'session'"></SessionItems>
+        <ContactItems v-if="mainStore.presentItem === 'contacts'"></ContactItems>
+        <CollectItems v-if="mainStore.presentItem === 'collect'"></CollectItems>
     </div>
 </template>
  
