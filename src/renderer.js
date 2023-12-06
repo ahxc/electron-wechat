@@ -4,3 +4,4 @@ import './common/style/index.css';
 import { createPinia } from 'pinia';
 
 createApp(App).use(createPinia()).mount('#app');
+

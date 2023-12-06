@@ -7,7 +7,6 @@ import {
     List,
     ListItem,
     ListItemMeta,
-    Badge,
     Avatar,
 } from 'ant-design-vue';
 import { SearchOutlined } from '@ant-design/icons-vue'
@@ -23,8 +22,8 @@ function onChange(params) {
 }
 
 
-function activatedItem(id) {
-    mainStore.contactSelected = id
+function activatedItem(item) {
+    mainStore.contactSelected = item
 }
 
 </script>
@@ -49,13 +48,13 @@ function activatedItem(id) {
             itemLayout="horizontal"
             :bordered="false"
             :split="false"
-            :dataSource="mainStore.sessionItems"
+            :dataSource="mainStore.contactItems"
             size="small"
         >
             <template #renderItem="{ item }">
                 <ListItem
-                    :class="{ activated: item.id === mainStore.contactSelected }"
-                    @click="activatedItem(item.id)"
+                    :class="{ activated: item.id === mainStore.contactSelected.id }"
+                    @click="activatedItem(item)"
                 >
                     <ListItemMeta>
                         <template #avatar>

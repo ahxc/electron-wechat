@@ -15,9 +15,9 @@ const mainStore = store();
 
 <template>
     <div class="container-a">
-        <SessionItems v-if="mainStore.presentItem === 'session'"></SessionItems>
-        <ContactItems v-if="mainStore.presentItem === 'contacts'"></ContactItems>
-        <CollectItems v-if="mainStore.presentItem === 'collect'"></CollectItems>
+        <SessionItems v-if="mainStore.indexSelected === 'session'"></SessionItems>
+        <ContactItems v-if="mainStore.indexSelected === 'contacts'"></ContactItems>
+        <CollectItems v-if="mainStore.indexSelected === 'collect'"></CollectItems>
     </div>
 </template>
  

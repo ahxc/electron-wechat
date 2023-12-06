@@ -3,6 +3,7 @@
 
 const { contextBridge, ipcRenderer } = require('electron');
 
+
 // 暴露一些操作窗口的方法给渲染进程
 contextBridge.exposeInMainWorld('winHandle', {
     // 设置窗口位置
@@ -20,3 +21,4 @@ contextBridge.exposeInMainWorld('winHandle', {
         ipcRenderer.send('createWinMain',);
     }
 });
+

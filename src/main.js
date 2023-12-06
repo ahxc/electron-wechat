@@ -1,6 +1,7 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 
+
 // 是否macOS
 const isMac = process.platform === 'darwin';
 

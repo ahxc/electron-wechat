@@ -1,13 +1,18 @@
 <script lang="js" setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import store from 'store/index.js';
 
 const mainStore = store();
 
 function itemClick(key = 'session') {
-    mainStore.presentItem = key;
+    mainStore.indexSelected = key;
 }
+
+onMounted(() => [
+
+])
 </script>
+
 
 <template>
     <div class="portrait">
@@ -24,7 +29,7 @@ function itemClick(key = 'session') {
             key="item"
             @click="itemClick(item.key)"
         >
-            <img :src="item.key === mainStore.presentItem ? item.fill : item.out">
+            <img :src="item.key === mainStore.indexSelected ? item.fill : item.out">
         </div>
     </div>
 </template>

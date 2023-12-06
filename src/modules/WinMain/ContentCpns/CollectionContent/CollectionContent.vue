@@ -17,6 +17,8 @@ import {
     watchEffect,
 } from 'vue'
 
+import { timeHandle } from 'common/utils'
+
 const mainStore = store();
 
 const data = ref(mainStore.collectData)
@@ -45,11 +47,12 @@ function collectData(params) {
                     <ListItem
                         key="item.title"
                         class="collect-item"
+                        @click=""
                     >
                         <template #actions>
                             <div class="footer">
                                 <span class="shaller">{{ item.shaller }}</span>
-                                <span class="date">{{ item.date }}</span>
+                                <span class="date">-{{ timeHandle(item.date) }}</span>
                             </div>
                         </template>
                         <template #extra>
