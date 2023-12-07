@@ -33,6 +33,7 @@ function activatedItem(item) {
 
 <template>
     <div class="search-bar">
+        <div class="drag-area"></div>
         <Input
             style="width: 90%;font-size: 12px;height: 24px;"
             class="search-input"

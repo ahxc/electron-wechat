@@ -54,13 +54,14 @@ const createWinMain = () => {
     height: 600,
     minWidth: 750,
     minHeight: 500,
-    frame: false,
+    // frame: false,
     titleBarStyle: 'hidden',
-    titleBarOverlay: {
-      color: '#ffffff',
-      height: 10,
-      // symbolColor: 'black'
-    },
+    titleBarOverlay: true,
+    // titleBarOverlay: {
+    //   color: '#ffffff',
+    //   height: 10,
+    //   // symbolColor: 'black'
+    // },
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },

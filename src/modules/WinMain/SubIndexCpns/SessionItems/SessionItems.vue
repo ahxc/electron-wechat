@@ -22,14 +22,15 @@ function onChange(params) {
 
 }
 
-function activatedItem(id) {
-    mainStore.sessionSelected = id
+function activatedItem(item) {
+    mainStore.sessionSelected = item
 }
 
 </script>
 
 <template>
     <div class="search-bar">
+        <div class="drag-area"></div>
         <Input
             style="width: 90%;font-size: 12px;height: 24px;"
             class="search-input"
@@ -53,8 +54,8 @@ function activatedItem(id) {
         >
             <template #renderItem="{ item }">
                 <ListItem
-                    :class="{ activated: item.id === mainStore.sessionSelected }"
-                    @click="activatedItem(item.id)"
+                    :class="{ activated: item.id === mainStore.sessionSelected.id }"
+                    @click="activatedItem(item)"
                 >
                     <ListItemMeta>
                         <template #avatar>
