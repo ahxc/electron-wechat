@@ -46,6 +46,7 @@ function pressEnter(e) {
                         class="submit-btn"
                         type="primary"
                         @click="pressEnter"
+                        :bodered="false"
                     >
                         发送
                     </Button>
