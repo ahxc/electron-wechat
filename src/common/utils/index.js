@@ -49,7 +49,14 @@ export function debounce(fn, delay = 400) {
 
 // 节流
 export function throttle(fn, delay = 400) {
-
+    let timer = null
+    return function (params) {
+        if (!timer) {
+            timer = setTimeout(() => {
+                fn.apply(this, arguments)
+            }, delay);
+        }
+    }
 }
 
 // 如果是当天的时间返回24小时制时分。否则返回日期格式YYYY/MM/DD
